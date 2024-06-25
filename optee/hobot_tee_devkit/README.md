@@ -13,11 +13,11 @@ information that used to be here in this git can be found under [optee_test].
 
 To build your Trusted Application (TA), follow these steps:
 
-1. Place your TA source code in the `ta` directory.
+1. Place your TA source code in the `ta/customer` directory.
 
-2. Open the `Makefile` located in the `ta` directory.
+2. Open the `Makefile` located in the `ta/customer` directory.
 
-3. Update the `TA_DIRS` variable in the `Makefile` by adding your TA directory name.
+3. Update the `CTA_DIRS` variable in the `Makefile` by adding your TA directory name.
 
 4. Execute the following command to compile your TA:
    bash ./build.sh all

@@ -5,14 +5,14 @@ set -e
 
 PWD=`pwd`
 
-export TOOLCHAIN_PATH=/opt/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu
-export CROSS_COMPILE=${TOOLCHAIN_PATH}/bin/aarch64-none-linux-gnu-
+if [ -z "${CROSS_COMPILE}" ]; then
+    TOOLCHAIN_PATH=/opt/arm-gnu-toolchain-11.3.rel1-x86_64-aarch64-none-linux-gnu
+    export CROSS_COMPILE=${TOOLCHAIN_PATH}/bin/aarch64-none-linux-gnu-
+fi
+
 export arch=arm64
 export TA_DEV_KIT_DIR=$PWD/export-ta_${arch}
 
-if [ -z "${CROSS_COMPILE}" ]; then
-    CROSS_COMPILE="aarch64-linux-gnu-"
-fi
 echo "CROSS_COMPILE is set to ${CROSS_COMPILE}"
 
 export CROSS_COMPILE_HOST=${CROSS_COMPILE}
